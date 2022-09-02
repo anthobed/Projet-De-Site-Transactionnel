@@ -1,0 +1,10 @@
+tr(id="items")
+  th= line.sku 
+  th= line.quantity 
+  th= line.name
+  th= line.price +"$" 
+  th= line.price*line.quantity + "$"
+  th
+    img(src=`${line.image_url}`)
+     
+  

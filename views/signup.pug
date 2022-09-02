@@ -1,0 +1,27 @@
+extends layouts/main
+
+block content
+  body 
+    .container-fluid
+      
+        
+        
+          form#formSign(method="post" action="/users/signup")
+            h1 Inscription
+             
+            input#nameSignUp(type="text" name="name" value="Nom Complet")
+
+            
+            input.form-control(type="email" name="email" value="Couriel")
+
+            
+            input#passwordSign(type="password" name="password" value="Mot de passe")
+        
+            if error
+              p(style="color:red;")= error
+            #signupButton  
+              button#signSubmitButton(type="submit" value="submit") Créer compte
+              
+             
+            p Déja inscrit ? 
+              a(href="/auth/signin") Connectez-vous.

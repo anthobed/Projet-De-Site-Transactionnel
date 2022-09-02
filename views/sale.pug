@@ -1,0 +1,77 @@
+extends layouts/main
+
+
+block content
+ - let amount = 0
+  form(action="/sale",method = "post")  
+    #selectitembar  
+        select(name="name")
+          option(value="") Selectionner produit 
+          for item  in items
+            option(value=item.name)= `${item.name}`
+        
+        input(id="quantity",type="number", name="quantity",placeholder = "Quantité", min = 1  )
+        
+        input(id="submit", type="submit", value="Ajouter")
+    #item
+      
+      table
+        tr
+          th Sku 
+          th Qté
+          th Nom
+          th Prix
+          th Montant 
+          th Image
+           
+        #lines 
+      
+          for line  in lines
+            - amount = amount + line.amount
+            include includes/line.pug
+
+
+      
+        
+  form(action="/sale/close" method="post") 
+    #price 
+      table
+        
+        
+          tr 
+            th Sous-Total: 
+            th    
+              input(disabled ,name="subtotal",type="text", value=`${results.subtotal.toFixed(2)} `,readonly,) 
+            th $
+              
+          tr 
+            th T.P.S: 
+            th
+              input(disabled,name="gst",type="text",value=`${results.gst.toFixed(2)} `,readonly)
+            th $  
+          tr 
+            th T.V.Q: 
+            th
+              input(disabled ,name="qst",type="text",value=`${results.qst.toFixed(2)} `,readonly) 
+            th $
+          tr 
+            th Total:
+            th  
+              input(  disabled,name="total",type="text",value=`${results.total.toFixed(2)  } `,readonly)   
+            th $    
+      input( disabled =!items.length ,id = "finish",type="submit", value="Terminer Vente")
+
+
+
+        
+   
+    
+  
+
+    
+
+  
+
+   
+
+

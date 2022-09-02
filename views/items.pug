@@ -1,0 +1,142 @@
+extends layouts/main
+
+
+block content
+  script(src="/javascripts/script.js" defer)
+  
+  #articlesSelector 
+    select#numberItem
+      option(value=10) Afficher 10 articles par page
+      option(value=50) Afficher 50 articles par page 
+      option(value=100) Afficher 100 articles par page 
+      option(value=1000) Afficher tous les articles 
+  form
+    #item
+      table
+        
+          
+            tr
+              th Image
+              th SKU
+              th Marque
+              th Produit
+              th Prix 
+              th 
+                 a.fas.fa-plus-square(id="butttonmodal",onclick='showModal()')
+            #items 
+              for item in items 
+                include includes/item.pug
+  nav
+    if numberItem === 1000 
+      ul#pagination
+    else 
+      ul#pagination
+        if page === 1 
+          li
+            a(href="/items/1" display="none" ) First
+        else 
+          li
+            a(href="/items/1"  ) First
+         
+        li
+          a(href="/items/") Prec
+        if page == pages.page1
+          li
+            a(class="active")= page
+        else 
+          li
+            a(href=`/items/${pages.page1}`)= (pages.page1)  
+        if page == pages.page2
+          li
+            a(class="active")= page
+        else 
+          li
+            a(href=`/items/${pages.page2}`)= (pages.page2) 
+        
+        if page == pages.page3
+          li
+            a(class="active")= page
+        else 
+          li
+            a(href=`/items/${pages.page3}`)= (pages.page3) 
+        if page == pages.page4
+          li
+            a(class="active")= page
+        else 
+          li
+            a(href=`/items/${pages.page4}`)= (pages.page4) 
+        if page == pages.page5
+          li
+            a(class="active")= page
+        else 
+          li
+            a(href=`/items/${pages.page5}`)= (pages.page5) 
+        if page == pages.page6
+          li
+            a(class="active")= page
+        else 
+          li
+            a(href=`/items/${pages.page6}`)= (pages.page6) 
+        if page == pages.page7
+          li
+            a(class="active")= page
+        else 
+          li
+            a(href=`/items/${pages.page7}`)= (pages.page7) 
+        li
+          a(href=`/items/${+page+1}`) Next 
+        li
+          a(href=`/items/${maxPage}`) Last  
+        
+          
+     
+          
+
+  #modal 
+  
+       
+        input(disabled,id="h1",type="text",value=`Ajout d'un produit `,readonly)
+        #imgSkuPrice
+          #img
+            img(src="../images/image-placeholder.png")
+            
+          #skuprice  
+            p SKU
+            input(id="sku", type="texte", value="SKU")
+            p Prix
+            input(id="sale", type="texte", value="Prix")
+            input(id="image",type="file",value="Choisir un image ")
+        #brandInput    
+          p Marque
+          input(id="brand", type="texte", value="Marque")
+        #nameInput
+          p Nom
+          input(id="name", type="texte", value="Nom")
+        #descriptionInput  
+          p Description 
+          input#description( type="texte")
+        #buttonModal
+          button#confirm Confirmer 
+          button#cancel(type="reset") Anuller 
+   
+   
+   
+  #modalDel 
+      h1 Etes vous certain de vouloir suprimmer cet item 
+        div 
+          button#buttonYes Oui 
+          button#buttonNo  Non 
+
+  
+    
+    
+
+    
+
+
+     
+       
+
+        
+
+      

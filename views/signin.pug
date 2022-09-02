@@ -1,0 +1,33 @@
+extends layouts/main
+
+
+block content
+
+  
+    
+  body 
+    .container-fluid
+      
+       
+          form#formSign(method="post" action="/auth/signin")
+            h1 Connexion
+            .form-group
+              input#emailSign(type="text" name="email" value="Couriel")
+
+            .form-group
+              
+              input#passwordSign(type="password" name="password" value="Mot de passe")
+           
+            
+            if error
+              p(style="color:red;")= error
+            #signButton 
+              button#signSubmitButton(type="submit" name="submit" value ="Créer Compte") Connexion
+            
+
+            span 
+              p Pas de compte ? 
+                a(href="/users/signup") Inscrivez-vous.
+
+              
+              

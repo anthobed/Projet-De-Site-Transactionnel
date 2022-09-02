@@ -1,0 +1,16 @@
+#items
+  tr(id=`items${item.sku}`)
+  
+    th 
+      img(src=`${item.image_url}`) 
+    th= item.sku 
+    th= item.brand
+    th= item.name 
+    th= item.sale_price + "$"
+    th#buttonModals   
+      a.fas.fa-edit(id="buttonEdit" href="#modal" onclick=`showModifModal(${JSON.stringify(item)})`)
+      a.fas.fa-trash-alt(id="buttonDelete" href="#modalDel" onclick=`showDelModal(${JSON.stringify(item)})`)
+  if error
+              p(style="color:red;")= error
+  
+  

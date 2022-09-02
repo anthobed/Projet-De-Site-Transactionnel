@@ -1,0 +1,13 @@
+if user 
+  ul   
+    li #[p]  #[a(href="/auth/signout") Déconnexion]
+    li #[p]  #[a(href="/items") Produits]
+    li #[p]  #[a(href="/sale") Caisse]
+    li #[p]  #[a(href="/") Accueil]
+if !user
+  ul  
+    li #[p]  #[a(href="/auth/signin") Connexion]
+    li #[p]  #[a(href="/users/signup") Incsription]
+    li #[p]  #[a(href="/") Accueil]
+    
+

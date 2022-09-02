@@ -1,0 +1,437 @@
+/* html {
+  scroll-behavior: smooth;
+} */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--primary-color);
+  font-size: 20px;
+  border-bottom: medium solid #000000;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+#articlesSelector {
+  background-color: var(--primary-color);
+  margin-left: 175px;
+  margin-right: 175px;
+  margin-top: 50px;
+  text-align: right;
+}
+#articlesSelector select {
+  width: 500px;
+  text-align: center;
+  color: var(--light-color);
+  font-size: 25px;
+  background-color: var(--primary-color);
+}
+
+body {
+  background-image: url(../images/background.png);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+}
+form {
+  margin-left: 175px;
+  margin-right: 175px;
+}
+
+#selectitembar {
+  border: medium solid #000000;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 35px;
+  padding: 5px;
+}
+
+select {
+  width: 75%;
+  border-radius: 5px;
+}
+
+input {
+  border-radius: 5px;
+}
+
+#quantity {
+  width: 17%;
+}
+#submit {
+  width: 8%;
+  color: var(--light-color);
+  background-color: var(--accent-color);
+  border-color: var(--dark-color);
+}
+#item {
+  margin-top: 0px;
+}
+#item table {
+  width: 100%;
+  font-size: 25px;
+  color: var(--light-color);
+  background-color: var(--primary-color);
+}
+#item th {
+  text-align: start;
+}
+
+#item a {
+  color: var(--light-color);
+}
+#items a {
+  color: #000000;
+}
+
+#items {
+  font-size: 20px;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+}
+
+#price {
+  float: right;
+  width: 25%;
+  font-size: 20px;
+  color: var(--light-color);
+
+  background-color: var(--primary-color);
+}
+
+#price table {
+  text-align: center;
+  display: flex;
+
+  justify-content: space-around;
+  flex-direction: column;
+  font: var(--light-color);
+  color: var(--light-color);
+
+  border: medium solid #000000;
+}
+img {
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+}
+#price tr {
+  font-size: 18px;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 20px;
+}
+#price th {
+  width: 33%;
+}
+
+#price input {
+  font-size: 16px;
+  color: var(--light-color);
+  background-color: transparent;
+  border: none;
+  text-align: center;
+}
+
+#finish {
+  height: 30px;
+  font-size: 18px;
+  color: var(--accent-color);
+  width: 100%;
+  background-color: var(--accent-color);
+  border: medium solid #000000;
+}
+i {
+  width: 50px;
+  height: 50px;
+}
+
+.footer {
+  text-align: center;
+  position: fixed;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+  border-top: medium solid #000000;
+}
+.footer p {
+  font-style: var(--light-color);
+}
+
+#error {
+  text-align: center;
+  color: red;
+  font-size: 40px;
+}
+
+#modal {
+  background-color: var(--primary-color);
+  text-align: center;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  overflow: auto;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  padding: 0;
+  width: 30%;
+  padding: 40px;
+  padding-top: 10px;
+}
+
+#modal h1 {
+  color: var(--light-color);
+}
+#modal p {
+  font-size: 20px;
+
+  color: var(--light-color);
+}
+#modal img {
+  background-color: var(--content-color);
+  width: 100%;
+  height: 100%;
+}
+
+#buttonModal {
+  justify-content: right;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+#buttonModal button {
+  border-color: var(--light-color);
+  border-radius: 5px;
+  margin-top: 5px;
+  height: 50px;
+  width: 100px;
+  color: var(--light-color);
+  background-color: var(--primary-color);
+}
+#brandInput {
+  width: 100%;
+  text-align: left;
+}
+#brandInput p {
+  margin: 0%;
+}
+#brandInput input {
+  height: 30px;
+  width: 100%;
+}
+
+#nameInput {
+  width: 100%;
+  text-align: left;
+}
+#nameInput p {
+  margin: 0%;
+}
+#nameInput input {
+  height: 30px;
+  width: 100%;
+}
+
+#descriptionInput {
+  width: 100%;
+  text-align: left;
+}
+#descriptionInput p {
+  margin: 0%;
+}
+#descriptionInput input {
+  height: 150px;
+  width: 100%;
+}
+
+#modalDel {
+  display: none;
+  background-color: var(--primary-color);
+  position: fixed;
+  text-align: center;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  overflow: auto;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  padding: 0;
+  width: 50%;
+}
+
+#h1 {
+  width: 100%;
+  font-size: 35px;
+  color: var(--light-color);
+  background-color: transparent;
+  border: none;
+  border-color: var(--light-color);
+  text-align: center;
+}
+
+#imgSkuPrice {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-flow: row wrap;
+}
+#skuprice {
+  justify-content: left;
+  margin-left: 5%;
+  width: 45%;
+}
+#skuprice p {
+  margin: 0%;
+  text-align: left;
+}
+#skuprice input {
+  width: 100%;
+  height: 40px;
+}
+#img {
+  width: 50%;
+}
+#buttonModals {
+  display: flex;
+  flex-direction: row;
+  font-size: 25px;
+  flex-wrap: nowrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+#buttonModals :hover {
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+#pagination {
+  font-family: "Limelight", cursive;
+  list-style: none;
+  display: flex;
+  margin-bottom: 70px;
+}
+
+#pagination a.active {
+  background-color: var(--accent-color);
+  color: white;
+}
+#pagination a:hover:not(.active) {
+  background-color: var(--light-color);
+  cursor: pointer;
+}
+
+#formSign {
+  margin-top: 10%;
+  margin-bottom: 15%;
+  margin-left: 37.5%;
+  margin-right: 37.5%;
+  text-align: center;
+  background-color: var(--primary-color);
+}
+#formSign h1 {
+  color: var(--light-color);
+  font-size: 40px;
+}
+#nameSignUp {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding-left: 10px;
+}
+#passwordSign {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+#emailSign {
+  padding-left: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+#formSign input {
+  color: var(--content-color);
+  font-size: 20px;
+  width: 85%;
+  height: 50px;
+  padding-left: 10px;
+}
+
+#formSign p {
+  background-color: var(--primary-color);
+  font-size: 25px;
+  color: var(--light-color);
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+}
+
+#formSign a {
+  color: var(--light-color);
+}
+#signButton {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#signSubmitButton {
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  height: 60px;
+
+  width: 85%;
+  background-color: var(--accent-color);
+  color: var(--light-color);
+  font-size: 25px;
+  border-color: var(--light-color);
+  border-radius: 10px;
+}
+#signSubmitButton:hover {
+  cursor: pointer;
+}
+#home {
+  text-align: center;
+  font-size: 50px;
+  color: var(--light-color);
+}
+
+:root {
+  --accent-color: #5f27cd;
+  --accent-color-hover: #5f27cd;
+  --primary-color: #341f97dd;
+  --disabled-color: #2e86de;
+  --dark-color: #222f3e;
+  --light-color: #ddd;
+  --danger-color: #ff6b6b;
+  --content-color: #c8d6e5dd;
+}
